@@ -1,3 +1,5 @@
+import TechBadge from "@/app/components/tech-badge/techbadge";
+
 import Image from "next/image";
 
 export const HeroSection = () => {
@@ -8,12 +10,17 @@ export const HeroSection = () => {
           <p className="font-mono text-emerald-400">Olá, meu nome é</p>
           <h2 className="text-4xl font-medium mt-2">Eduardo Marques</h2>
 
-          <div>
-            <p className="text-gray-400 my-6 text-sm sm:text-base">
-              Olá, meu nome é Eduardo, desenvolvedor web
-            </p>
+          <p className="text-gray-400 my-6 text-sm sm:text-base">
+            Olá, meu nome é Eduardo, desenvolvedor web
+          </p>
+
+          <div className="flex flex-wrap gap-x-2 gap-y-3">
+            {Array.from({ length: 5 }).map((_, index) => (
+              <TechBadge name="Next.js" />
+            ))}
           </div>
-          <div>techs</div>
+
+          <div>contato</div>
         </div>
         <Image
           width={420}
