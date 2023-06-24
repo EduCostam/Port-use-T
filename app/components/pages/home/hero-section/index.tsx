@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 
 export const HeroSection = () => {
@@ -7,19 +5,20 @@ export const HeroSection = () => {
     <section className="w-full h-[755px] bg-hero-image bg-cover bg-center bg-no-repeat flex flex-col justify-end pb-10 sm:pb-32 py-32 lg:pb-[110px]">
       <div className="container flex items-start justify-between flex-col-reverse lg:flex-row">
         <div className="w-full lg:max-w-[530px]">
-          <p>Olá, meu nome é</p>
-          <h2>Eduardo Marques</h2>
+          <p className="font-mono text-emerald-400">Olá, meu nome é</p>
+          <h2 className="text-4xl font-medium mt-2">Eduardo Marques</h2>
 
-          <p>Olá, meu nome é Eduardo, desenvolvedor web</p>
-
+          <div>
+            <p className="text-gray-400 my-6 text-sm sm:text-base">
+              Olá, meu nome é Eduardo, desenvolvedor web
+            </p>
+          </div>
           <div>techs</div>
-
-          <div>contato</div>
         </div>
         <Image
           width={420}
           height={404}
-          src={"/images/profile-pic.png"}
+          src="/images/profile-pic.png"
           alt="Foto de perfil do Eduardo Marques"
         />
       </div>
