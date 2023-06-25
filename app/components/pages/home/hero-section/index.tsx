@@ -30,7 +30,7 @@ const MOCK_CONTACTS = [
 
 export const HeroSection = () => {
   return (
-    <section className="w-full h-[755px] bg-hero-image bg-cover bg-center bg-no-repeat flex flex-col justify-end pb-10 sm:pb-32 py-32 lg:pb-[110px]">
+    <section className="w-full lg:h-[755px] bg-hero-image bg-cover bg-center bg-no-repeat flex flex-col justify-end pb-10 sm:pb-32 py-32 lg:pb-[110px]">
       <div className="container flex items-start justify-between flex-col-reverse lg:flex-row">
         <div className="w-full lg:max-w-[530px]">
           <p className="font-mono text-emerald-400">Olá, meu nome é</p>
@@ -46,8 +46,8 @@ export const HeroSection = () => {
             ))}
           </div>
 
-          <div className="mt:6 lg:mt-10 flex items-center">
-            <Button className="shadow-button">
+          <div className="mt:6 lg:mt-10 flex sm:items-center sm:gap-5 flex-col sm:flex-row">
+            <Button className="w-max shadow-button">
               Entre em contato
               <HiArrowNarrowRight size={18} />
             </Button>
@@ -70,6 +70,7 @@ export const HeroSection = () => {
           height={404}
           src="/images/profile-pic.png"
           alt="Foto de perfil do Eduardo Marques"
+          className="w-[300px] h-[300px] lg:w-[420px] lg:h-[404] mb-6 lg:mb-0 shadow-2xl rounded-lg object-cover"
         />
       </div>
     </section>
