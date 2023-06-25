@@ -1,6 +1,32 @@
-import TechBadge from "@/app/components/tech-badge/techbadge";
-
+import { Button } from "@/app/components/button";
+import TechBadge from "@/app/components/tech-badge";
 import Image from "next/image";
+import { HiArrowNarrowRight } from "react-icons/hi";
+import {
+  TbBrandGithub,
+  TbBrandLinkedin,
+  TbBrandYoutube,
+  TbBrandWhatsapp,
+} from "react-icons/tb";
+
+const MOCK_CONTACTS = [
+  {
+    url: "https:github.com.br",
+    icon: <TbBrandGithub />,
+  },
+  {
+    url: "https:linkeedin.com.br",
+    icon: <TbBrandLinkedin />,
+  },
+  {
+    url: "https:youtube.com.br",
+    icon: <TbBrandYoutube />,
+  },
+  {
+    url: "https:whatsapp.com.br",
+    icon: <TbBrandWhatsapp />,
+  },
+];
 
 export const HeroSection = () => {
   return (
@@ -14,13 +40,30 @@ export const HeroSection = () => {
             Olá, meu nome é Eduardo, desenvolvedor web
           </p>
 
-          <div className="flex flex-wrap gap-x-2 gap-y-3">
-            {Array.from({ length: 5 }).map((_, index) => (
+          <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[340px]">
+            {Array.from({ length: 7 }).map((_, index) => (
               <TechBadge name="Next.js" />
             ))}
           </div>
 
-          <div>contato</div>
+          <div className="mt:6 lg:mt-10 flex items-center">
+            <Button className="shadow-button">
+              Entre em contato
+              <HiArrowNarrowRight size={18} />
+            </Button>
+            <div className="text-2xl text-gray-600 flex items-center h-20 gap-3">
+              {MOCK_CONTACTS.map((contact, index) => (
+                <a
+                  href="contact.url"
+                  key={`contact-${index}`}
+                  target="_blank"
+                  className="hover:text-gray-100 transition-colors"
+                >
+                  {contact.icon}
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
         <Image
           width={420}
